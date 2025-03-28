@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /*margin: 4rem;*/
+  background-color: #ffffff;
+  color: #1f2937;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.content {
+  background-color: #f9fafb;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+.paragraph {
+  border: 1px solid #dbeafe;
+  margin: 1rem 0;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.nothing {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.form input[type=text] {
+  background-color: #1E1E1E; /* Dark but distinct from the body */
+  color: #FFFFFF; /* White text for readability */
+  border: 1px solid #333333; /* Subtle border for structure */
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+.form input[type=text]:focus {
+  outline: none;
+  border-color: #4A90E2; /* Highlight effect when focused */
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+.form .input-form {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+.form textarea {
+  resize: none;
+  padding: 16px;
+  font-size: 16px;
+  border-width: 1px;
+  border-color: #cccccc;
+  background-color: #ffffff;
+  color: #000000;
+  border-style: solid;
+  border-radius: 8px;
+  box-shadow: 4px 1px 12px rgba(66, 66, 66, 0.75);
+  text-shadow: 0px 0px 23px rgba(66, 66, 66, 0.75);
+}
+.form textarea:focus {
+  outline: none;
+}
+.form input[type=submit],
+.form .type-choice {
+  max-width: 320px;
+  display: flex;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  gap: 0.75rem;
+  color: rgb(65, 63, 63);
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+.form input[type=submit]:hover,
+.form .type-choice:hover {
+  transform: scale(1.02);
+}
+.form .type-choice {
+  text-decoration: none;
+  background-color: #dbeafe;
+}
+.form .type-choice:hover {
+  background-color: #60a5fa;
+}
+.form #input-type {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.form .clicked {
+  background-color: #60a5fa;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+.controls input[value=clear] {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.questions-container {
+  max-width: 80vw;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid black;
+}
+.questions-container .test-header {
+  display: flex;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.questions-container .test-header .test-title {
+  width: 50%;
+}
+.questions-container .test-header .test-title span {
+  background-color: #fef3c7;
+}
+.questions-container .questions-description {
+  font-weight: bold;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+.questions-container .question-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  margin-bottom: 0.25rem;
+}
+.questions-container .question {
+  padding: 0.5rem 2rem;
+  background-color: #dbeafe;
+}
+.questions-container .answers {
+  display: flex;
+  margin: 0 4rem;
+}
+.questions-container .answer {
+  width: 25%;
+}
+.questions-container .answer:hover {
+  border: 1px solid red;
+}
+.questions-container .actions {
+  display: none;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.questions-container a {
+  display: flex;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  gap: 0.75rem;
+  color: rgb(65, 63, 63);
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.6s ease;
+  text-decoration: none;
+}
+.questions-container a.delete {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+.questions-container a:hover {
+  transform: scale(1.1);
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .questions-container {
+    max-width: 100%;
+    border: none;
+    padding: 0;
+  }
+  @page {
+    border: 2px solid #dbeafe;
+    padding: 0.5rem 2rem;
+    padding-top: 1rem;
+    @bottom-left {
+      content: "Mr. Usama AlAsfar";
+      font-size: 1.5rem;
+      font-family: "Montserrat", sans-serif;
+      text-align: left;
+      vertical-align: middle;
+      padding-left: 1rem;
+    }
+    @bottom-right {
+      content: "+20 10 25530898";
+      font-size: 1.5rem;
+      font-family: "Montserrat", sans-serif;
+      vertical-align: middle;
+      padding-right: 1rem;
+    }
+  }
+  .no-break {
+    -moz-column-break-inside: avoid;
+         break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+.actions.show {
+  display: flex;
+}/*# sourceMappingURL=styles.css.map */

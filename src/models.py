@@ -1,5 +1,5 @@
 from datetime import datetime
-from example_db import example_mcq_questions, example_paragraph, example_paragraph_questions
+from src.example_db import example_mcq_questions, example_paragraph, example_paragraph_questions
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
