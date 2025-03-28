@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap");
+$font-primary: "Montserrat", sans-serif;
+$font-secondary: "Poppins", sans-serif;
+
+$dark-gray: #121212;
+
+// Primary & Secondary Colors
+$primary: #4f46e5; // Indigo 600
+$secondary: #22c55e; // Green 500
+
+// Background & Surfaces
+$background: #f9fafb; // Gray 50
+$surface: #ffffff; // White
+
+// Text Colors
+$text-primary: #1f2937; // Gray 800
+$text-secondary: #6b7280; // Gray 500
+
+// Borders & Dividers
+$border: #e5e7eb; // Gray 200
+
+// Feedback Colors
+$error: #ef4444; // Red 500
+$warning: #facc15; // Yellow 400
+
+$light-blue: #dbeafe;
+$light-yellow: #fef3c7;
+
+$body-bg: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /*margin: 4rem;*/
+  background-color: $surface;
+  color: $text-primary;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: $font-primary;
+  font-weight: 700;
+}
+
+.content {
+  background-color: $background;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border: 1px solid $border;
+  border-radius: 0.5rem;
+}
+
+.paragraph {
+  border: 1px solid $light-blue;
+  margin: 1rem 0;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.nothing {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+
+  input[type="text"] {
+    background-color: #1E1E1E;  /* Dark but distinct from the body */
+    color: #FFFFFF;  /* White text for readability */
+    border: 1px solid #333333;  /* Subtle border for structure */
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+
+    &:focus {
+      outline: none;
+      border-color: #4A90E2;  /* Highlight effect when focused */
+      box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    }
+  }
+
+  .input-form {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  textarea {
+    resize: none;
+    padding: 16px;
+    font-size: 16px;
+    border-width: 1px;
+    border-color: #cccccc;
+    background-color: #ffffff;
+    color: #000000;
+    border-style: solid;
+    border-radius: 8px;
+    box-shadow: 4px 1px 12px rgba(66, 66, 66, 0.75);
+    text-shadow: 0px 0px 23px rgba(66, 66, 66, 0.75);
+  }
+
+  textarea:focus {
+    outline: none;
+  }
+
+  input[type="submit"],
+  .type-choice {
+    max-width: 320px;
+    display: flex;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    gap: 0.75rem;
+    color: rgb(65, 63, 63);
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.6s ease;
+  }
+
+  input[type="submit"]:hover,
+  .type-choice:hover {
+    transform: scale(1.02);
+  }
+
+  .type-choice {
+    text-decoration: none;
+    background-color: $light-blue;
+
+    &:hover {
+      background-color: #60a5fa;
+    }
+  }
+
+  #input-type {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .clicked {
+    background-color: #60a5fa;
+  }
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+
+  input[value="clear"] {
+    background-color: $error;
+    color: $surface;
+  }
+}
+
+
+.questions-container {
+  max-width: 80vw;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid black;
+
+  .test-header {
+    display: flex;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+
+    .test-title {
+      width: 50%;
+
+      span {
+        background-color: $light-yellow;
+      }
+    }
+  }
+
+  .questions-description {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .question-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .question {
+    padding: 0.5rem 2rem;
+    background-color: $light-blue;
+  }
+  .answers {
+    display: flex;
+    margin: 0 4rem;
+  }
+
+  .answer {
+    width: 25%;
+  }
+
+  .answer:hover {
+    border: 1px solid red;
+  }
+
+  .actions {
+    display: none;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+  }
+
+  a {
+    display: flex;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-family: $font-secondary;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    gap: 0.75rem;
+    color: rgb(65, 63, 63);
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    text-decoration: none;
+  }
+
+  a.delete {
+    background-color: $error;
+    color: $surface;
+  }
+
+  a:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .questions-container {
+    max-width: 100%;
+    border: none;
+    padding: 0;
+  }
+
+  @page {
+    border: 2px solid $light-blue;
+    padding: 0.5rem 2rem;
+    padding-top: 1rem;
+    
+
+    @bottom-left{
+      content: "Mr. Usama AlAsfar";
+      font-size: 1.5rem;
+      font-family: $font-primary;
+      text-align: left;
+      vertical-align: middle;
+      padding-left: 1rem;
+    }
+    
+    @bottom-right {
+      content: "+20 10 25530898";
+      font-size: 1.5rem;
+      font-family: $font-primary;
+      vertical-align: middle;
+      padding-right: 1rem;
+    }
+  }
+
+  .no-break {
+    break-inside: avoid; // Prevents splitting inside elements like divs
+    page-break-inside: avoid; // Older property for compatibility
+  }
+}
+
+.actions.show {
+  display: flex;
+}

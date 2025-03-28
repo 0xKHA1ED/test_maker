@@ -1,0 +1,29 @@
+body {
+    background-color: #121212;
+}
+
+input[type="submit"] {
+    background-color: #4A90E2;  /* Modern blue - Stands out against dark backgrounds */
+    color: #FFFFFF;  /* White text for contrast */
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #357ABD;  /* Darker blue on hover */
+}
+
+input[type="submit"]:active {
+    background-color: #2C5A91;  /* Even darker blue for press effect */
+    transform: scale(0.98);  /* Slight press effect */
+}
+
+input[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);  /* Soft glow effect */
+}

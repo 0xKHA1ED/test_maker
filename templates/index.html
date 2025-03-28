@@ -1,0 +1,88 @@
+
+{% extends 'base.html' %} {% block head %}<title>Test Maker</title>{% endblock
+%} {% block body %}
+<div class="content">
+  <div class="form">
+    <h1>Test Maker</h1>
+
+    <div>
+      <form action="/toggle" method="POST" id="input-type">
+        <button
+          class="type-choice {% if section == 'mcq' %}clicked{% endif %}"
+          id="mcq-btn"
+          type="submit"
+          name="type"
+          value="mcq"
+        >
+          MCQ
+        </button>
+
+        <button
+          class="type-choice {% if section == 'paragraph' %}clicked{% endif %}"
+          id="paragraph-btn"
+          type="submit"
+          name="type"
+          value="paragraph"
+        >
+          Paragraph
+        </button>
+
+        <button
+          class="type-choice {% if section == 'paragraph-mcq' %}clicked{% endif %}"
+          id="paragraph-mcq-btn"
+          type="submit"
+          name="type"
+          value="paragraph-mcq"
+        >
+          P MCQ
+        </button>
+      </form>
+
+      {% if section == 'mcq' %}
+      <form action="/" method="POST" class="input-form">
+        <textarea
+          name="content"
+          id="content"
+          rows="6"
+          cols="50"
+          placeholder="Paste question and answers here"
+        ></textarea>
+        <input type="submit" value="Add Question" id="btn-add" />
+      </form>
+
+      {% elif section == 'paragraph' %}
+      <form action="/add_paragraph" method="POST" class="input-form">
+        <textarea
+          name="paragraph-content"
+          id="paragraph-content"
+          rows="6"
+          cols="50"
+          placeholder="Paste your paragraph here"
+        ></textarea>
+        <input type="submit" value="Add Paragraph" id="btn-section" />
+      </form>
+
+      {% elif section == 'paragraph-mcq' %}
+      <form action="/add_paragraph_question" method="POST" class="input-form">
+        <textarea
+          name="content"
+          id="paragraph-questions-content"
+          rows="6"
+          cols="50"
+          placeholder="Paste paragraph question and answers here"
+        ></textarea>
+        <input type="submit" value="Add Question" id="btn-p-mcq" />
+      </form>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if questions | length < 1 %}
+  <h3 class="nothing">There's nothing here!</h3>
+  {% else %}
+
+  {% include "partials/test.html" %}
+  {% include "partials/controls.html" %}
+  {% endif %}
+</div>
+{% endblock %}

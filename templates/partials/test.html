@@ -1,0 +1,59 @@
+<div class="questions-container" id="printable">
+  <div class="test-header">
+    <p class="test-title"><span>Test on unit 7</span></p>
+    <p class="student-name">Student Name:</p>
+  </div>
+  <p class="questions-description">
+    Select the correct answer from options a, b, c, or d.
+  </p>
+
+  <!-- MCQ Questions -->
+  {% for question in questions %}
+  <div class="question-card no-break">
+    <p class="question">{{question.id}}- {{question.question}}</p>
+    <div class="answers">
+      <p class="answer">a) {{question.answer_1}}</p>
+      <p class="answer">b) {{question.answer_2}}</p>
+      <p class="answer">c) {{question.answer_3}}</p>
+      <p class="answer">d) {{question.answer_4}}</p>
+    </div>
+    <div class="actions">
+      <a href="/delete/{{question.id}}" class="delete">Delete</a>
+      <a href="/edit/{{question.id}}">Edit</a>
+    </div>
+  </div>
+  {% endfor %}
+
+  <!-- Paragraphs -->
+  {% if not paragraphs | length < 1 %}
+  <div class="paragraph-card no-break">
+    <p class="questions-description">
+      Read this paragraph and answer the questions
+    </p>
+    {% for paragraph in paragraphs %}
+    <p class="paragraph">{{paragraph.paragraph}}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Paragraph Questions -->
+  {% if not paragraph_questions | length < 1 %}
+  <p class="questions-description">
+    Select the correct answer from options a, b, c, or d.
+  </p>
+  {% for paragraph_question in paragraph_questions %}
+  <div class="question-card no-break">
+    <p class="question">{{paragraph_question.question}}</p>
+    <div class="answers">
+      <p class="answer">a) {{paragraph_question.answer_1}}</p>
+      <p class="answer">b) {{paragraph_question.answer_2}}</p>
+      <p class="answer">c) {{paragraph_question.answer_3}}</p>
+      <p class="answer">d) {{paragraph_question.answer_4}}</p>
+    </div>
+    <div class="actions">
+      <a href="/delete/{{paragraph_question.id}}" class="delete">Delete</a>
+      <a href="/edit/{{paragraph_question.id}}">Edit</a>
+    </div>
+  </div>
+  {% endfor %} {% endif %}
+</div>
